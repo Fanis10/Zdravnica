@@ -20,11 +20,134 @@
 						<ul class="navigation__list">
 							<li><a href="index.html">Главная</a></li>
 							<li><a href="internal-page.html">Дол</a></li>
+							<li>
+								<button class="btn btn-blue" data-modal="contactModal--form">
+									<span>Отправить заявку</span>
+								</button>
+							</li>
+							<li>
+								<button class="btn btn-blue" data-modal="contactModal--form2">
+									<span>заявка успешно отправлена!</span>
+								</button>
+							</li>
+							<li>
+								<button class="btn btn-blue" data-modal="contactModal--form3">
+									<span>Что-то пошло не так</span>
+								</button>
+							</li>
 						</ul>
 					</div>
 				</div>
 			</section>
 		</main>
+	</div>
+
+	<div class="modal modal-form" id="contactModal--form">
+		<div class="modal__dialog">
+			<button type="button" class="_close-modal modal__close" data-bs-dismiss="modal" aria-label="Close">
+				<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.464245 0.464466L7.53531 7.53553M0.464245 7.53553L7.53531 0.464466" stroke="#57606A" />
+				</svg>
+			</button>
+			<div class="modal__title">Оставьте заявку</div>
+			<form class="form">
+				<div class="select">
+					<div class="select-show">
+						<span class="input-title">Размещение*</span>
+						<div class="select-current">Выберите здравницу</div>
+						<div class="select-arrow">
+							<img src="img/arrow-down2.svg" alt="">
+						</div>
+					</div>
+					<div class="select-hidden">
+						<div class="select-items">
+							<div class="select-item">Южный</div>
+							<div class="select-item">Кисловодск</div>
+							<div class="select-item">Балтийские пески</div>
+							<div class="select-item">Березовая роща</div>
+							<div class="select-item">Зеленый бор</div>
+						</div>
+					</div>
+				</div>
+				<div class="select">
+					<div class="select-show">
+						<div class="input-title">Тип путевки</div>
+						<div class="select-current">Выберите программу отдыха</div>
+						<div class="select-arrow">
+							<img src="img/arrow-down2.svg" alt="">
+						</div>
+					</div>
+					<div class="select-hidden">
+						<div class="select-items">
+							<div class="select-item">Отдых</div>
+							<div class="select-item">Здоровье</div>
+							<div class="select-item">Здоровье +</div>
+							<div class="select-item">ДОЛ</div>
+							<div class="select-item">Однодневная путевка (без проживания)</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<span class="input-title">Даты посещения*</span>
+					<input type="text" placeholder="">
+				</div>
+				<div class="form-group">
+					<span class="input-title">Контактное лицо*</span>
+					<input type="text" placeholder="">
+				</div>
+				<div class="form-group">
+					<span class="input-title">Телефон</span>
+					<input type="tel" placeholder="">
+				</div>
+				<div class="form-group">
+					<span class="input-title">Email</span>
+					<input type="email" placeholder="">
+				</div>
+				<div class="form-group form-group--100">
+					<span class="input-title">Комментарий</span>
+					<input type="text" placeholder="">
+				</div>
+				<div class="form-check">
+					<input type="checkbox">
+					<label>
+						Нажимая на кнопку «отправить заявку», Вы соглашаетесь с Политикой об обработке персональных данных
+					</label>
+				</div>
+				<button class="form-btn btn">
+					<span class="form-btn__text">Отправить заявку</span>
+					<span class="form-btn__icon">
+						<img src="img/arrow-right.svg" alt="">
+					</span>
+				</button>
+			</form>
+		</div>
+	</div>
+	<div class="modal modal-form modal-form--2" id="contactModal--form2">
+		<div class="modal__dialog">
+			<button type="button" class="_close-modal modal__close" data-bs-dismiss="modal" aria-label="Close">
+				<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.464245 0.464466L7.53531 7.53553M0.464245 7.53553L7.53531 0.464466" stroke="#57606A" />
+				</svg>
+			</button>
+			<div class="modal__title">
+				Спасибо, <br>
+				ваша заявка успешно отправлена!
+			</div>
+		</div>
+	</div>
+	<div class="modal modal-form modal-form--2" id="contactModal--form3">
+		<div class="modal__dialog">
+			<button type="button" class="_close-modal modal__close" data-bs-dismiss="modal" aria-label="Close">
+				<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.464245 0.464466L7.53531 7.53553M0.464245 7.53553L7.53531 0.464466" stroke="#57606A" />
+				</svg>
+			</button>
+			<div class="modal__title">
+				Что-то пошло не так, <br>
+				обновите страницу <br>
+				или попробуйте снова позднее
+			</div>
+		</div>
 	</div>
 
 	<script src="js/libs.min.js"></script>
@@ -51,5 +174,15 @@
 
 	.navigation__list li a:hover {
 		color: #BA9166;
+	}
+
+	.navigation__list button {
+		height: 50px;
+		border-radius: 100px;
+		padding: 5px 25px;
+	}
+
+	.navigation__list button span {
+		font-size: 18px;
 	}
 </style>

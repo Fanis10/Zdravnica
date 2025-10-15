@@ -22,20 +22,20 @@
                 </a>
                 <ul class="header__list">
                     <li>
-                        <a href="">О нас</a>
-                        <a href="">О нас</a>
+                        <a href="#regions">О нас</a>
+                        <a href="#regions">О нас</a>
                     </li>
                     <li>
-                        <a href="">Направления отдыха</a>
-                        <a href="">Направления отдыха</a>
+                        <a href="#camps">Направления отдыха</a>
+                        <a href="#camps">Направления отдыха</a>
                     </li>
                     <li>
-                        <a href="">Путевки</a>
-                        <a href="">Путевки</a>
+                        <a href="#travel">Путевки</a>
+                        <a href="#travel">Путевки</a>
                     </li>
                     <li>
-                        <a href="">Контакты</a>
-                        <a href="">Контакты</a>
+                        <a href="#footer">Контакты</a>
+                        <a href="#footer">Контакты</a>
                     </li>
                 </ul>
                 <div class="burger">
@@ -80,7 +80,7 @@
                                 </button>
                             </div>
                             <div class="select-item">
-                                <button class="select-item__btn">
+                                <button class="select-item__btn" data-modal="contactModal--form">
                                     <span class="btn-title">Оставить заявку</span>
                                     <span class="btn-text">внешним гостям</span>
                                 </button>
@@ -170,7 +170,7 @@
 									<span class="btn-title">Забронировать</span>
 									<span class="btn-text">Сотрудникам компаний</span>
 								</button>
-								<button class="main__btn btn btn-white">
+								<button class="main__btn btn btn-white" data-modal="contactModal--form">
 									<span class="btn-title">Оставить заявку</span>
 									<span class="btn-text">Внешним гостям</span>
 								</button>
@@ -206,10 +206,13 @@
 			<section class="video-section">
 				<div class="video-section__inner">
 					<div class="video">
-						<video id="video" poster="img/video-img.webp" tabindex="0" playsinline preload="metadata">
+						<video id="video" tabindex="0" playsinline preload="metadata">
 							<source src="video/video.mp4" type="video/mp4">
 						</video>
 					</div>
+					<video id="video2" autoplay loop muted>
+						<source src="video/video.mp4" type="video/mp4">
+					</video>
 					<div class="video__logo">
 						<img src="img/logo.svg" alt="">
 					</div>
@@ -222,7 +225,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="regions tabs-inner">
+			<section id="regions" class="regions tabs-inner tabs2-inner">
 				<div class="container">
 					<div class="regions__inner">
 						<h2 class="regions__title h2">Здравницы <sup>(15)</sup></h2>
@@ -240,259 +243,329 @@
 								</button>
 							</div>
 						</div>
-						<div class="regions__group2">
-							<button class="regions__btn btn btn-blue">
-								<span>Здравницы</span>
-							</button>
-							<a href="#camps" class="regions__link">
-								<span>Детские оздоровительные лагеря</span>
-							</a>
-						</div>
 					</div>
 				</div>
 				<div class="tabs-body">
 					<div data-content-path="1" class="tab__content tab__content--active">
+						<div class="regions__group2">
+							<button data-tab-path2="1" class="tab2 tab2--active">
+								<span>Здравницы</span>
+							</button>
+							<button data-tab-path2="2" class="tab2 btn">
+								<span>Детские оздоровительные лагеря</span>
+							</button>
+						</div>
 						<div class="map__wrap">
 							<div class="map">
 								<img src="img/map.svg" alt="">
-								<div class="region region--1">
-									<div class="region__show">
-										<span class="region__title">Ленинградская область (2)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
+								<div data-content-path2="1" class="tab2__content tab2__content--active">
+									<div class="region region--1">
+										<div class="region__show">
+											<span class="region__title">Ленинградская область (2)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Ленинградская область</span>
+												</div>
 											</div>
-											<div class="region-card__item">
-												<span>Ленинградская область</span>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
 											</div>
 										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
+									</div>
+									<div class="region region--2">
+										<div class="region__show">
+											<span class="region__title">Калининградская область (1)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Калининградская область (1)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="region region--3">
+										<div class="region__show">
+											<span class="region__title">Ставропольский край (2)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Ставропольский край (2)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="region region--4">
+										<div class="region__show">
+											<span class="region__title">Краснодарский край (1)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Краснодарский край (1)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="region region--5">
+										<div class="region__show">
+											<span class="region__title">Республика Марий Эл (1)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Республика Марий Эл (1)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="region region--6">
+										<div class="region__show">
+											<span class="region__title">Ставропольский край (2)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Ставропольский край (2)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="region region--7">
+										<div class="region__show">
+											<span class="region__title">Республика Татарстан (1)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Республика Татарстан (1)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="region region--8">
+										<div class="region__show">
+											<span class="region__title">Алтайский край (2)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Алтайский край (2)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="region region--9">
+										<div class="region__show">
+											<span class="region__title">Ставропольский край (2)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Ставропольский край (2)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="region region--10">
+										<div class="region__show">
+											<span class="region__title">Магаданская область (1)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Магаданская область (1)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="region region--11">
+										<div class="region__show">
+											<span class="region__title">Камчатский край (1)</span>
+											<span class="region__icon"></span>
+										</div>
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Камчатский край (1)</span>
+												</div>
+											</div>
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="region region--2">
-									<div class="region__show">
-										<span class="region__title">Калининградская область (1)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Калининградская область (1)</span>
-											</div>
+								<div data-content-path2="2" class="tab2__content">
+									<div class="region region--5">
+										<div class="region__show">
+											<span class="region__title">Республика Марий Эл (1)</span>
+											<span class="region__icon"></span>
 										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Республика Марий Эл (1)</span>
+												</div>
 											</div>
-										</div>
-									</div>
-								</div>
-								<div class="region region--3">
-									<div class="region__show">
-										<span class="region__title">Ставропольский край (2)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Ставропольский край (2)</span>
-											</div>
-										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="region region--4">
-									<div class="region__show">
-										<span class="region__title">Краснодарский край (1)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Краснодарский край (1)</span>
-											</div>
+									<div class="region region--8">
+										<div class="region__show">
+											<span class="region__title">Алтайский край (2)</span>
+											<span class="region__icon"></span>
 										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Алтайский край (2)</span>
+												</div>
 											</div>
-										</div>
-									</div>
-								</div>
-								<div class="region region--5">
-									<div class="region__show">
-										<span class="region__title">Республика Марий Эл (1)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Республика Марий Эл (1)</span>
-											</div>
-										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="region region--6">
-									<div class="region__show">
-										<span class="region__title">Ставропольский край (2)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Ставропольский край (2)</span>
-											</div>
+									<div class="region region--9">
+										<div class="region__show">
+											<span class="region__title">Ставропольский край (2)</span>
+											<span class="region__icon"></span>
 										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
+										<div class="region-card">
+											<div class="region-card__top">
+												<div class="region-card__img">
+													<img src="img/region-card__img.webp" alt="">
+												</div>
+												<div class="region-card__item">
+													<span>Ставропольский край (2)</span>
+												</div>
 											</div>
-										</div>
-									</div>
-								</div>
-								<div class="region region--7">
-									<div class="region__show">
-										<span class="region__title">Республика Татарстан (1)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Республика Татарстан (1)</span>
-											</div>
-										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="region region--8">
-									<div class="region__show">
-										<span class="region__title">Алтайский край (2)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Алтайский край (2)</span>
-											</div>
-										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="region region--9">
-									<div class="region__show">
-										<span class="region__title">Ставропольский край (2)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Ставропольский край (2)</span>
-											</div>
-										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="region region--10">
-									<div class="region__show">
-										<span class="region__title">Магаданская область (1)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Магаданская область (1)</span>
-											</div>
-										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="region region--11">
-									<div class="region__show">
-										<span class="region__title">Камчатский край (1)</span>
-										<span class="region__icon"></span>
-									</div>
-									<div class="region-card">
-										<div class="region-card__top">
-											<div class="region-card__img">
-												<img src="img/region-card__img.webp" alt="">
-											</div>
-											<div class="region-card__item">
-												<span>Камчатский край (1)</span>
-											</div>
-										</div>
-										<div class="region-card__desc">
-											<div class="region-card__title">Балтийские Пески</div>
-											<div class="region-card__text">
-												Чистейший воздух, природа и простор.
+											<div class="region-card__desc">
+												<div class="region-card__title">Балтийские Пески</div>
+												<div class="region-card__text">
+													Чистейший воздух, природа и простор.
+												</div>
 											</div>
 										</div>
 									</div>
@@ -501,8 +574,16 @@
 						</div>
 					</div>
 					<div data-content-path="2" class="tab__content">
+						<div class="regions__group2">
+							<button class="regions__btn btn btn btn-blue">
+								<span>Здравницы</span>
+							</button>
+							<a href="#camps" class="regions__link btn">
+								<span>Детские оздоровительные лагеря</span>
+							</a>
+						</div>
 						<div class="regions__wrap">
-							<div class="regions__cards">
+							<div class="regions__cards all-cards">
 								<div class="region-card2">
 									<div class="region-card2__left">
 										<a href="" class="region-card2__img">
@@ -712,7 +793,7 @@
 									</div>
 								</div>
 							</div>
-							<button class="regions__btn2 btn btn-black__outline">
+							<button class="regions__btn2 show-all btn btn-black__outline">
 								<span>Показать еще</span>
 								<span>Скрыть</span>
 							</button>
@@ -832,7 +913,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="travel">
+			<section id="travel" class="travel">
 				<div class="container">
 					<div class="travel__inner">
 						<h2 class="travel__title h2">Путевки <sup>(05)</sup></h2>
@@ -895,7 +976,7 @@
 														</button>
 													</div>
 													<div class="select-item">
-														<button class="select-item__btn">
+														<button class="select-item__btn" data-modal="contactModal--form">
 															<span class="btn-title">Оставить заявку</span>
 															<span class="btn-text">внешним гостям</span>
 														</button>
@@ -1005,7 +1086,7 @@
 														</button>
 													</div>
 													<div class="select-item">
-														<button class="select-item__btn">
+														<button class="select-item__btn" data-modal="contactModal--form">
 															<span class="btn-title">Оставить заявку</span>
 															<span class="btn-text">внешним гостям</span>
 														</button>
@@ -1162,7 +1243,7 @@
 														</button>
 													</div>
 													<div class="select-item">
-														<button class="select-item__btn">
+														<button class="select-item__btn" data-modal="contactModal--form">
 															<span class="btn-title">Оставить заявку</span>
 															<span class="btn-text">внешним гостям</span>
 														</button>
@@ -1273,7 +1354,7 @@
 														</button>
 													</div>
 													<div class="select-item">
-														<button class="select-item__btn">
+														<button class="select-item__btn" data-modal="contactModal--form">
 															<span class="btn-title">Оставить заявку</span>
 															<span class="btn-text">внешним гостям</span>
 														</button>
@@ -1385,7 +1466,7 @@
 														</button>
 													</div>
 													<div class="select-item">
-														<button class="select-item__btn">
+														<button class="select-item__btn" data-modal="contactModal--form">
 															<span class="btn-title">Оставить заявку</span>
 															<span class="btn-text">внешним гостям</span>
 														</button>
@@ -1560,7 +1641,7 @@
 				</div>
 			</section>
 		</main>
-		<footer class="footer">
+		<footer id="footer" class="footer">
   <div class="container">
     <div class="footer__inner">
       <div class="footer-top">
@@ -1579,6 +1660,10 @@
           <li>
             <a href="">Лицензии</a>
             <a href="">Лицензии</a>
+          </li>
+          <li>
+            <a href="">Правила проживания</a>
+            <a href="">Правила проживания</a>
           </li>
         </ul>
         <div class="select">
@@ -1652,7 +1737,7 @@
                 </button>
               </div>
               <div class="select-item">
-                <button class="select-item__btn">
+                <button class="select-item__btn" data-modal="contactModal--form">
                   <span class="btn-title">Оставить заявку</span>
                   <span class="btn-text">внешним гостям</span>
                 </button>
@@ -1669,6 +1754,9 @@
           </li>
           <li>
             <a href="">Лицензии</a>
+          </li>
+          <li>
+            <a href="">Правила проживания</a>
           </li>
         </ul>
       </div>
@@ -2339,9 +2427,178 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal modal-form" id="contactModal--form">
+		<div class="modal__dialog">
+			<button type="button" class="_close-modal modal__close" data-bs-dismiss="modal" aria-label="Close">
+				<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.464245 0.464466L7.53531 7.53553M0.464245 7.53553L7.53531 0.464466" stroke="#57606A" />
+				</svg>
+			</button>
+			<div class="modal__title">Оставьте заявку</div>
+			<form class="form">
+				<div class="select">
+					<div class="select-show">
+						<span class="input-title">Размещение*</span>
+						<div class="select-current">Выберите здравницу</div>
+						<div class="select-arrow">
+							<img src="img/arrow-down2.svg" alt="">
+						</div>
+					</div>
+					<div class="select-hidden">
+						<div class="select-items">
+							<div class="select-item">Южный</div>
+							<div class="select-item">Кисловодск</div>
+							<div class="select-item">Балтийские пески</div>
+							<div class="select-item">Березовая роща</div>
+							<div class="select-item">Зеленый бор</div>
+						</div>
+					</div>
+				</div>
+				<div class="select">
+					<div class="select-show">
+						<div class="input-title">Тип путевки</div>
+						<div class="select-current">Выберите программу отдыха</div>
+						<div class="select-arrow">
+							<img src="img/arrow-down2.svg" alt="">
+						</div>
+					</div>
+					<div class="select-hidden">
+						<div class="select-items">
+							<div class="select-item">Отдых</div>
+							<div class="select-item">Здоровье</div>
+							<div class="select-item">Здоровье +</div>
+							<div class="select-item">ДОЛ</div>
+							<div class="select-item">Однодневная путевка (без проживания)</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<span class="input-title">Даты посещения*</span>
+					<input type="text" placeholder="">
+				</div>
+				<div class="form-group">
+					<span class="input-title">Контактное лицо*</span>
+					<input type="text" placeholder="">
+				</div>
+				<div class="form-group">
+					<span class="input-title">Телефон</span>
+					<input type="tel" placeholder="">
+				</div>
+				<div class="form-group">
+					<span class="input-title">Email</span>
+					<input type="email" placeholder="">
+				</div>
+				<div class="form-group form-group--100">
+					<span class="input-title">Комментарий</span>
+					<input type="text" placeholder="">
+				</div>
+				<div class="form-check">
+					<input type="checkbox">
+					<label>
+						Нажимая на кнопку «отправить заявку», Вы соглашаетесь с Политикой об обработке персональных данных
+					</label>
+				</div>
+				<button class="form-btn btn">
+					<span class="form-btn__text">Отправить заявку</span>
+					<span class="form-btn__icon">
+						<img src="img/arrow-right.svg" alt="">
+					</span>
+				</button>
+			</form>
+		</div>
+	</div>
+	<div class="modal modal-form modal-form--2" id="contactModal--form2">
+		<div class="modal__dialog">
+			<button type="button" class="_close-modal modal__close" data-bs-dismiss="modal" aria-label="Close">
+				<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.464245 0.464466L7.53531 7.53553M0.464245 7.53553L7.53531 0.464466" stroke="#57606A" />
+				</svg>
+			</button>
+			<div class="modal__title">
+				Спасибо, <br>
+				ваша заявка успешно отправлена!
+			</div>
+		</div>
+	</div>
+	<div class="modal modal-form modal-form--2" id="contactModal--form3">
+		<div class="modal__dialog">
+			<button type="button" class="_close-modal modal__close" data-bs-dismiss="modal" aria-label="Close">
+				<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.464245 0.464466L7.53531 7.53553M0.464245 7.53553L7.53531 0.464466" stroke="#57606A" />
+				</svg>
+			</button>
+			<div class="modal__title">
+				Что-то пошло не так, <br>
+				обновите страницу <br>
+				или попробуйте снова позднее
+			</div>
+		</div>
+	</div>
 
 	<script src="js/libs.min.js"></script>
 <script src="js/main.min.js"></script>
 </body>
 
 </html>
+
+<script>
+	//Video
+	const section = document.querySelector('.video-section');
+	const video = section.querySelector('#video');
+	const btnPlay = section.querySelector('.video__play');
+	const btnClose = section.querySelector('.video__close');
+
+	function openVideo() {
+		if (section.classList.contains('video-section--active')) return;
+		section.classList.add('video-section--active');
+		video.play().catch(() => {
+			video.muted = true;
+			video.play().catch(() => { });
+		});
+	}
+
+	function restorePosterUsingLoad(v) {
+		try {
+			v.pause();
+			v.currentTime = 0;
+			v.load();
+		} catch (err) {
+		}
+	}
+
+	function restorePosterByRecreating(v) {
+		const parent = v.parentNode;
+		const clone = v.cloneNode(true);
+		clone.preload = v.preload;
+		clone.poster = v.poster;
+		clone.muted = v.muted;
+		parent.replaceChild(clone, v);
+		return clone;
+	}
+
+	function closeVideo() {
+		if (!section.classList.contains('video-section--active')) return;
+		section.classList.remove('video-section--active');
+
+		restorePosterUsingLoad(video);
+
+		setTimeout(() => {
+			const computed = window.getComputedStyle(video);
+			if (!video.paused || video.currentTime !== 0) {
+				const newVideo = restorePosterByRecreating(video);
+			}
+		}, 50);
+	}
+
+	btnPlay.addEventListener('click', (e) => { e.stopPropagation(); openVideo(); });
+	btnClose.addEventListener('click', (e) => { e.stopPropagation(); closeVideo(); });
+	video.addEventListener('click', (e) => {
+		e.stopPropagation();
+		if (!section.classList.contains('video-section--active')) openVideo();
+		else video.paused ? video.play() : video.pause();
+	});
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && section.classList.contains('video-section--active')) closeVideo();
+	});
+	video.addEventListener('ended', closeVideo);
+</script>
