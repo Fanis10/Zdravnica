@@ -2545,13 +2545,15 @@
 <script>
 	//Video
 	const section = document.querySelector('.video-section');
-	const video = section.querySelector('#video');
+	let video = section.querySelector('#video'); // note: let, т.к. может быть заменён
 	const btnPlay = section.querySelector('.video__play');
 	const btnClose = section.querySelector('.video__close');
 
 	function openVideo() {
 		if (section.classList.contains('video-section--active')) return;
 		section.classList.add('video-section--active');
+		document.body.classList.add('fixed-body'); // <-- добавляем класс для body
+
 		video.play().catch(() => {
 			video.muted = true;
 			video.play().catch(() => { });
@@ -2564,6 +2566,7 @@
 			v.currentTime = 0;
 			v.load();
 		} catch (err) {
+			// ignore
 		}
 	}
 
@@ -2580,6 +2583,7 @@
 	function closeVideo() {
 		if (!section.classList.contains('video-section--active')) return;
 		section.classList.remove('video-section--active');
+		document.body.classList.remove('fixed-body'); // <-- удаляем класс для body
 
 		restorePosterUsingLoad(video);
 
@@ -2587,19 +2591,37 @@
 			const computed = window.getComputedStyle(video);
 			if (!video.paused || video.currentTime !== 0) {
 				const newVideo = restorePosterByRecreating(video);
+				// Обновляем переменную и привязываем обработчики к новому элементу
+				video = newVideo;
+				attachVideoListeners(video);
 			}
 		}, 50);
 	}
 
-	btnPlay.addEventListener('click', (e) => { e.stopPropagation(); openVideo(); });
-	btnClose.addEventListener('click', (e) => { e.stopPropagation(); closeVideo(); });
-	video.addEventListener('click', (e) => {
+	/* Обработчики для видео, вынесены в отдельные функции для переиспользования */
+	function onVideoClick(e) {
 		e.stopPropagation();
 		if (!section.classList.contains('video-section--active')) openVideo();
 		else video.paused ? video.play() : video.pause();
-	});
+	}
+
+	function onVideoEnded() {
+		closeVideo();
+	}
+
+	function attachVideoListeners(v) {
+		// При необходимости можно сначала удалить старые слушатели,
+		// но т.к. старый элемент обычно удаляется из DOM, достаточно просто добавить новые.
+		v.addEventListener('click', onVideoClick);
+		v.addEventListener('ended', onVideoEnded);
+	}
+
+	/* Инициализация слушателей */
+	btnPlay.addEventListener('click', (e) => { e.stopPropagation(); openVideo(); });
+	btnClose.addEventListener('click', (e) => { e.stopPropagation(); closeVideo(); });
+	attachVideoListeners(video);
 	document.addEventListener('keydown', (e) => {
 		if (e.key === 'Escape' && section.classList.contains('video-section--active')) closeVideo();
 	});
-	video.addEventListener('ended', closeVideo);
+
 </script>
