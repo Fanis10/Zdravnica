@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/libs.min.css">
 	<link rel="stylesheet" href="css/style.min.css">
 	<title>Главная</title>
+	<link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -22,12 +23,12 @@
                 </a>
                 <ul class="header__list">
                     <li>
-                        <a href="#regions">О нас</a>
-                        <a href="#regions">О нас</a>
+                        <a href="#info">О нас</a>
+                        <a href="#info">О нас</a>
                     </li>
                     <li>
-                        <a href="#camps">Направления отдыха</a>
-                        <a href="#camps">Направления отдыха</a>
+                        <a href="#regions">Направления отдыха</a>
+                        <a href="#regions">Направления отдыха</a>
                     </li>
                     <li>
                         <a href="#travel">Путевки</a>
@@ -92,10 +93,10 @@
         </div>
         <div class="header-menu">
             <ul class="header__list">
-                <li><a href="">О нас</a></li>
-                <li><a href="">Направления отдыха</a></li>
-                <li><a href="">Путевки</a></li>
-                <li><a href="">Контакты</a></li>
+                <li><a href="#info">О нас</a></li>
+                <li><a href="#regions">Направления отдыха</a></li>
+                <li><a href="#travel">Путевки</a></li>
+                <li><a href="#footer">Контакты</a></li>
             </ul>
             <a class="header__phone" href="tel:+74951234567">+7 495 123-45-67</a>
         </div>
@@ -179,7 +180,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="info">
+			<section id="info" class="info">
 				<div class="container">
 					<div class="info__inner">
 						<h3 class="info__title">
@@ -1672,9 +1673,9 @@
 								<div class="swiper-wrapper">
 									<div class="swiper-slide">
 										<div class="gallery-card">
-											<a class="gallery-card__img" href="img/gallery-img.webp" data-fancybox="gallery">
+											<div class="gallery-card__img" href="img/gallery-img.webp" data-fancybox="gallery">
 												<img src="img/gallery-img.webp" alt="">
-											</a>
+											</div>
 											<div class="gallery-card__item">
 												<span>Старая Русса, Новгородская область</span>
 											</div>
@@ -1687,9 +1688,9 @@
 									</div>
 									<div class="swiper-slide">
 										<div class="gallery-card">
-											<a class="gallery-card__img" href="img/gallery-img2.webp" data-fancybox="gallery">
+											<div class="gallery-card__img" href="img/gallery-img2.webp" data-fancybox="gallery">
 												<img src="img/gallery-img2.webp" alt="">
-											</a>
+											</div>
 											<div class="gallery-card__item">
 												<span>Самарская область, Сергиевские минеральные воды</span>
 											</div>
@@ -1702,9 +1703,9 @@
 									</div>
 									<div class="swiper-slide">
 										<div class="gallery-card">
-											<a class="gallery-card__img" href="img/gallery-img3.webp" data-fancybox="gallery">
+											<div class="gallery-card__img" href="img/gallery-img3.webp" data-fancybox="gallery">
 												<img src="img/gallery-img3.webp" alt="">
-											</a>
+											</div>
 											<div class="gallery-card__item">
 												<span>Долина Алтая, Алтайский край</span>
 											</div>
@@ -1717,9 +1718,9 @@
 									</div>
 									<div class="swiper-slide">
 										<div class="gallery-card">
-											<a class="gallery-card__img" href="img/gallery-img.webp" data-fancybox="gallery">
+											<div class="gallery-card__img" href="img/gallery-img.webp" data-fancybox="gallery">
 												<img src="img/gallery-img.webp" alt="">
-											</a>
+											</div>
 											<div class="gallery-card__item">
 												<span>Старая Русса, Новгородская область</span>
 											</div>
@@ -1732,9 +1733,9 @@
 									</div>
 									<div class="swiper-slide">
 										<div class="gallery-card">
-											<a class="gallery-card__img" href="img/gallery-img2.webp" data-fancybox="gallery">
+											<div class="gallery-card__img" href="img/gallery-img2.webp" data-fancybox="gallery">
 												<img src="img/gallery-img2.webp" alt="">
-											</a>
+											</div>
 											<div class="gallery-card__item">
 												<span>Самарская область, Сергиевские минеральные воды</span>
 											</div>
@@ -1747,9 +1748,9 @@
 									</div>
 									<div class="swiper-slide">
 										<div class="gallery-card">
-											<a class="gallery-card__img" href="img/gallery-img3.webp" data-fancybox="gallery">
+											<div class="gallery-card__img" href="img/gallery-img3.webp" data-fancybox="gallery">
 												<img src="img/gallery-img3.webp" alt="">
-											</a>
+											</div>
 											<div class="gallery-card__item">
 												<span>Долина Алтая, Алтайский край</span>
 											</div>
@@ -2569,6 +2570,12 @@
 						<div class="select-arrow">
 							<img src="img/arrow-down2.svg" alt="">
 						</div>
+						<div class="error">
+							Обязательное для заполнения поле
+							<span>
+								<img src="img/!.svg" alt="">
+							</span>
+						</div>
 					</div>
 					<div class="select-hidden">
 						<div class="select-items">
@@ -2601,25 +2608,43 @@
 				<div class="form-group">
 					<span class="input-title">Даты посещения*</span>
 					<input type="text" placeholder="">
+					<div class="error">
+						Обязательное для заполнения поле
+						<span>
+							<img src="img/!.svg" alt="">
+						</span>
+					</div>
 				</div>
 				<div class="form-group">
 					<span class="input-title">Контактное лицо*</span>
 					<input type="text" placeholder="">
+					<div class="error">
+						Обязательное для заполнения поле
+						<span>
+							<img src="img/!.svg" alt="">
+						</span>
+					</div>
 				</div>
 				<div class="form-group">
 					<span class="input-title">Телефон</span>
 					<input class="phone" type="tel" placeholder="">
 				</div>
 				<div class="form-group">
-					<span class="input-title">Email</span>
+					<span class="input-title">Email*</span>
 					<input class="email" type="email" placeholder="">
+					<div class="error">
+						Обязательное для заполнения поле
+						<span>
+							<img src="img/!.svg" alt="">
+						</span>
+					</div>
 				</div>
 				<div class="form-group form-group--100">
 					<span class="input-title">Комментарий</span>
 					<input type="text" placeholder="">
 				</div>
 				<div class="form-check">
-					<input type="checkbox">
+					<input type="checkbox" checked>
 					<label>
 						Нажимая на кнопку «отправить заявку», Вы соглашаетесь с Политикой об обработке персональных данных
 					</label>
@@ -2661,9 +2686,22 @@
 		</div>
 	</div>
 
+	<div class="cookies">
+		<div class="cookies__inner">
+			<div class="cookies__text">
+				Мы обрабатываем cookies, чтобы сделать наш сайт удобнее и персонализированее для вас. Подробнее:
+				<a href="">политика использования cookies и защита данных.</a>
+			</div>
+			<button class="cookies__btn btn btn-black__outline">
+				<span>Принять</span>
+			</button>
+		</div>
+	</div>
+
 	<script src="js/libs.min.js"></script>
 <script src="js/main.min.js"></script>
 <script src="https://unpkg.com/inputmask/dist/inputmask.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 </body>
 
 </html>
