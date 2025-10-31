@@ -43,7 +43,7 @@
 		</main>
 	</div>
 
-	<div class="modal modal-form" id="contactModal--form">
+	<div class="modal modal--active modal-form" id="contactModal--form">
 		<div class="modal__dialog">
 			<button type="button" class="_close-modal modal__close" data-bs-dismiss="modal" aria-label="Close">
 				<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +51,7 @@
 				</svg>
 			</button>
 			<div class="modal__title">Оставьте заявку</div>
-			<form class="form">
+			<form id="form" class="form">
 				<div class="select">
 					<div class="select-show">
 						<span class="input-title">Размещение*</span>
@@ -94,9 +94,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="form-group">
-					<span class="input-title">Даты посещения*</span>
-					<input type="text" placeholder="">
+				<div class="calendar">
+					<label class="calendar-title" for="range">Даты посещения*</label>
+					<input id="range" type="text" placeholder="">
 					<div class="error">
 						Обязательное для заполнения поле
 						<span>
@@ -120,7 +120,7 @@
 				</div>
 				<div class="form-group">
 					<span class="input-title">Email*</span>
-					<input class="email" type="email" placeholder="">
+					<input class="email" type="email" placeholder="" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$">
 					<div class="error">
 						Обязательное для заполнения поле
 						<span>
